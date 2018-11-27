@@ -1,6 +1,7 @@
 <template>
     <ul>
-        <Pokemon />
+        <h2>{{pokemons}}</h2>
+        <Pokemon/>
     </ul>
 </template>
 
@@ -8,7 +9,7 @@
 import Pokemon from './Pokemon.vue';
 export default {
     props: {
-        pokedex: Array
+        pokemons: Array
     },
     components: {
         Pokemon

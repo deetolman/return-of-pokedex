@@ -1,7 +1,8 @@
 <template>
     <li>
         <div class="info">
-            <h2>{{pokemons.pokemon}}</h2>
+            <h2>Hello</h2>
+            <!-- <h2>{{pokemon}}</h2> -->
         </div>
     </li>
 </template>

@@ -25633,7 +25633,6 @@ const pokemons = [
     }
 ];
 
-
 export default {
     getPokemons() {
         return pokemons;  

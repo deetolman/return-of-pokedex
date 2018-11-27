@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <Header/>
-    <Pokedex/>
+    <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
 import Pokedex from './components/Pokedex.vue';
-import pokemonApi from '../services/pokedex.js';
+import pokemons from '../services/pokedex.js';
+import Header from './components/Header.vue';
 
 export default {
     data() {
         return {
-            pokedex: pokemonApi.getPokedex()
+            pokemons: pokemons.getPokemons()
         };
     },
     components: {
+        Header,
         Pokedex
     }
 };
