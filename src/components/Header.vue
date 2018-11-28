@@ -1,6 +1,6 @@
 <template>
     <header>
-        <label>
+        <label class="label">
             Type:
             <select v-model="filter.type_1">
                 <option value="">All</option>
@@ -12,11 +12,11 @@
                 </option>
             </select>
         </label> 
-        <label>
+        <label class="label">
             Weight:
             <input type="number" v-model.number="filter.weight" step="100">
         </label>
-        <label>
+        <label class="label">
             Defense:
             <input type="number" v-model.number="filter.defense" step="100">
         </label>
@@ -36,7 +36,9 @@ export default {
 header {
     background: lightgoldenrodyellow;
     color: gray;
-    padding: 10px;
+    padding: 20px;
 }
-
+.label {
+    font-weight: 200px;
+}
 </style>

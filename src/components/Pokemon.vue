@@ -20,7 +20,9 @@ export default {
 
 <style>
 img {
-    width:100px;
+    width:150px;
 }
-
+li {
+    border:solid 0.4px;
+}
 </style>
