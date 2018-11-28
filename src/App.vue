@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <Header v-bind:filter="filter"/>
-    {{filter}}
-    <Pokedex v-bind:pokemons="pokemons"/>
+    <Header 
+        v-bind:filter="filter"
+        v-bind:types="pokemonTypes"
+        v-bind:defense="defense"/>
+
+    <Pokedex v-bind:pokemons="filteredPokemons"/>
   </div>
 </template>
 
@@ -14,12 +17,36 @@ import Header from './components/Header.vue';
 export default {
     data() {
         return {
-            pokemons: pokemons.getPokemons()
+            pokemons: pokemons.getPokemons(),
+            filter: {
+                weight: 0,
+                type_1:'',
+                defense:''
+            }
         };
     },
     components: {
         Header,
         Pokedex
+    },
+    computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokemons.forEach(pokemon => {
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
+                }
+            });
+            return types;
+        },
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
+                const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+                const hasType = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
+                return hasWeight && hasDefense && hasType;
+            });
+        }
     }
 };
 </script>

@@ -1,9 +1,10 @@
 <template>
     <li>
         <div class="info">
-            <h2>{{ pokemon.pokemon }}</h2>
-            <p>{{ pokemon.weight }}</p>
-            <!-- <p>{{ pokemon.url_image }}</p> -->
+            <h2>Name: {{ pokemon.pokemon }}</h2>
+            <h3>Weight: {{ pokemon.weight }}</h3>
+            <h3>Type: {{ pokemon.type_1}}</h3>
+            <h3>Defense: {{ pokemon.defense }}</h3>
             <img v-bind:src="pokemon.url_image"/>
         </div>
     </li>

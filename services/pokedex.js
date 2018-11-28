@@ -25633,8 +25633,20 @@ const pokemons = [
     }
 ];
 
+const types = [];
+
+pokemons.forEach(pokemon => {
+    const type_1 = pokemon.type_1;
+    if(types.includes(type_1) !== true) {
+        types.push(type_1);
+    }
+});
+
 export default {
     getPokemons() {
         return pokemons;  
+    },
+    getTypes() {
+        return types;
     }
 };

@@ -1,17 +1,42 @@
 <template>
     <header>
         <label>
-            something:
+            Type:
+            <select v-model="filter.type_1">
+                <option value="">All</option>
+                <option 
+                v-for="type_1 in types"
+                v-bind:key="type_1"
+                v-bind:value="type_1">
+                {{type_1}}
+                </option>
+            </select>
+        </label> 
+        <label>
+            Weight:
+            <input type="number" v-model.number="filter.weight" step="100">
         </label>
-        <input>
+        <label>
+            Defense:
+            <input type="number" v-model.number="filter.defense" step="100">
+        </label>
     </header>
 </template>
 
 <script>
 export default {
+    props: {
+        filter: Object,
+        types: Array
+    }
 };
 </script>
 
 <style>
+header {
+    background: lightgoldenrodyellow;
+    color: gray;
+    padding: 10px;
+}
 
 </style>
