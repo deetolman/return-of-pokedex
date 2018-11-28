@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header v-bind:filter="filter"/>
+    {{filter}}
     <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
