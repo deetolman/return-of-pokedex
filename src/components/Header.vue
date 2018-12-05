@@ -27,10 +27,6 @@
                 <option value="weight">Weight</option>
                 <option value="defense">Defense</option>
             </select>
-            <select v-model="sort.direction">
-                <option value="1">Asc</option>
-                <option value="-1">Desc</option>
-            </select>
         </label>
     </header>
 </template>
@@ -39,7 +35,8 @@
 export default {
     props: {
         filter: Object,
-        types: Array
+        types: Array,
+        sort: Object
     }
 };
 </script>
