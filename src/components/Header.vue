@@ -14,11 +14,11 @@
         </label> 
         <label class="label">
             Weight:
-            <input type="number" v-model.number="filter.weight" step="100">
+            <input type="number" v-model.number="filter.weight" step="10">
         </label>
         <label class="label">
             Defense:
-            <input type="number" v-model.number="filter.defense" step="100">
+            <input type="number" v-model.number="filter.defense" step="10">
         </label>
         <label>
             Sort By:
