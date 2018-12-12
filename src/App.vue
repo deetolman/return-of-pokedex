@@ -7,12 +7,18 @@
         v-bind:defense="defense"/>
 
     <Pokedex v-bind:pokemons="sortedPokemons"/>
+    <PokemonDetail 
+        v-for="pokemon in pokemons"
+        @click.native="onSelect(pokemon)"
+        :key="pokemon.pokemon"
+        :pokemon="pokemon"/>
   </div>
 </template>
 
 <script>
 import Pokedex from './components/Pokedex.vue';
 import pokemons from '../services/pokedex.js';
+import PokemonDetail from './components/PokemonDetail.vue';
 import Header from './components/Header.vue';
 
 export default {
@@ -26,12 +32,17 @@ export default {
             },
             sort: {
                 field: 'all'
+            },
+            props: {
+                pokedex: Array,
+                onSelect: Function
             }
         };
     },
     components: {
         Header,
-        Pokedex
+        Pokedex,
+        PokemonDetail
     },
     computed: {
         pokemonTypes() {
