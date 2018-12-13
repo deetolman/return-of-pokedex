@@ -13,7 +13,6 @@
 import Pokedex from './components/Pokedex.vue';
 import pokemons from '../services/pokedex.js';
 import Header from './components/Header.vue';
-// import PokemonDetail from './components/PokemonDetail';
 
 export default {
     data() {

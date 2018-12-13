@@ -8,24 +8,38 @@
             <h3>Defense: {{ pokemon.defense }}</h3>
             <img v-bind:src="pokemon.url_image"
             />
+
         </div>
     </li>
-       <!-- <PokemonDetail :pokemon="pokemon"/> -->
+         <Modal v-if="showModal" :onClose="() => showModal = false" :pokemon="pokemon">
+        <PokemonDetail :pokemon="selected"/>
+        </Modal>
     </div>
 </template>
 
 <script>
-// import PokemonDetail from './PokemonDetail.vue';
+import Modal from './Modal';
 
 export default {
+    data() {
+        return {
+            selected: null,
+            showModal: false
+        };
+    },
     props: {
         pokemon: Object
     },
     methods: {
-        handleSelect() {
-            console.log(this.pokemon.pokemon);
+        handleSelect(pokemon) {
+            this.selected = pokemon;
+            this.showModal = true;    
         }
+    },
+    components: {
+        Modal
     }
+
 };
 </script>
 
