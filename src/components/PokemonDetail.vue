@@ -1,24 +1,20 @@
 <template>
-<section v-if="pokemon">    
+<section v-if="pokemon"> 
+    <p>DETAILS:</p>   
     <h1>{{pokemon.pokemon}}</h1>
-    <p>
-     <button @click="showModal = true">show detail</button>
-    </p>
+      <h3>Weight: {{ pokemon.weight }}</h3>
+      <h3>Type: {{ pokemon.type_1}}</h3>
+      <h3>Defense: {{ pokemon.defense }}</h3>
 </section>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            showModal: false
-        };
-
-    },
     props: {
         pokemon: Object
-    } 
-};   
+    }
+};
+ 
 </script>
 
 <style>
